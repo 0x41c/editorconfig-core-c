@@ -37,3 +37,6 @@ CTestTestfile.cmake
 ~*
 *~
 *.swp
+
+# Environment file, used by sonarlint + whatever you use to load .envrc files
+.envrc

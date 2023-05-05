@@ -7,7 +7,12 @@
     <option name="reloaded" value="true" />
   </component>
   <component name="CMakeRunConfigurationManager">
-    <generated />
+    <generated>
+      <config projectName="editorconfig" targetName="uninstall" />
+      <config projectName="editorconfig" targetName="editorconfig_bin" />
+      <config projectName="editorconfig" targetName="editorconfig_shared" />
+      <config projectName="editorconfig" targetName="editorconfig_static" />
+    </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
     <configurations>
@@ -24,6 +29,7 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -54,9 +60,15 @@
     "settings.editor.selected.configurable": "org.sonarlint.intellij.config.project.SonarLintProjectConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="CMake Application.editorconfig_bin">
+  <component name="RunManager" selected="CMake Application.clean-build-bin">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="clean-build-bin" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="editorconfig" TARGET_NAME="editorconfig_bin" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="editorconfig" RUN_TARGET_NAME="editorconfig_bin">
+      <method v="2">
+        <option name="CMake.Explicit.Target" explicitTargetName="clean" />
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
@@ -81,6 +93,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.clean-build-bin" />
       <item itemvalue="CMake Application.uninstall" />
       <item itemvalue="CMake Application.editorconfig_bin" />
       <item itemvalue="CMake Application.editorconfig_shared" />
@@ -96,7 +109,7 @@
       <option name="presentableId" value="Default" />
       <updated>1683170662127</updated>
       <workItem from="1683170663449" duration="2594000" />
-      <workItem from="1683173470230" duration="5306000" />
+      <workItem from="1683173470230" duration="9154000" />
     </task>
     <servers />
   </component>
@@ -105,6 +118,7 @@
   </component>
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName=".editorconfig" />
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
