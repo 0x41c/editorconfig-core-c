@@ -1,8 +1,8 @@
 #!/bin/bash
 
-git fetch --unshallow
-
 if [ ! -d "$HOME"/.sonar ]; then
+
+  git fetch --unshallow
 
   # Prerequisites
   export SONAR_SCANNER_VERSION="4.8"
