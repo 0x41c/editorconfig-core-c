@@ -22,20 +22,20 @@
  * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
  * POSSIBILITY OF SUCH DAMAGE.
-*/
+ */
 
 #ifndef EC_GLOB_H__
 #define EC_GLOB_H__
 
 #include "global.h"
 
-#define EC_GLOB_NOMATCH  1   /* Match failed. */
+#define EC_GLOB_NOMATCH 1 /* Match failed. */
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 EDITORCONFIG_LOCAL
-int ec_glob(const char * pattern, const char * string);
+int ec_glob(const char *pattern, const char *string);
 
 /* Special characters. */
 extern const char ec_special_chars[];

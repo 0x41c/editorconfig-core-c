@@ -34,4 +34,3 @@
 typedef struct editorconfig_name_value editorconfig_name_value;
 
 #endif /* !EDITORCONFIG_H__ */
-

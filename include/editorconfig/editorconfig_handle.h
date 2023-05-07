@@ -37,7 +37,7 @@
 /* When included from a user program, EDITORCONFIG_EXPORT may not be defined,
  * and we define it here*/
 #ifndef EDITORCONFIG_EXPORT
-# define EDITORCONFIG_EXPORT
+#define EDITORCONFIG_EXPORT
 #endif
 
 #ifdef __cplusplus
@@ -47,7 +47,7 @@ extern "C" {
 /*!
  * @brief The editorconfig handle object type
  */
-typedef void*   editorconfig_handle;
+typedef void *editorconfig_handle;
 
 /*!
  * @brief Create and intialize a default editorconfig_handle object.
@@ -65,7 +65,7 @@ editorconfig_handle editorconfig_handle_init(void);
  * @param h The editorconfig_handle object needs to be destroyed.
  *
  * @retval zero The editorconfig_handle object is destroyed successfully.
- * 
+ *
  * @retval non-zero Failed to destroy the editorconfig_handle object.
  */
 EDITORCONFIG_EXPORT
@@ -82,7 +82,7 @@ int editorconfig_handle_destroy(editorconfig_handle h);
  * error is returned.
  */
 EDITORCONFIG_EXPORT
-const char* editorconfig_handle_get_err_file(editorconfig_handle h);
+const char *editorconfig_handle_get_err_file(editorconfig_handle h);
 
 /*!
  * @brief Get the version fields of an editorconfig_handle object.
@@ -102,8 +102,8 @@ const char* editorconfig_handle_get_err_file(editorconfig_handle h);
  * @return None.
  */
 EDITORCONFIG_EXPORT
-void editorconfig_handle_get_version(const editorconfig_handle h, int* major,
-        int* minor, int* patch);
+void editorconfig_handle_get_version(const editorconfig_handle h, int *major,
+                                     int *minor, int *patch);
 
 /*!
  * @brief Set the version fields of an editorconfig_handle object.
@@ -126,7 +126,7 @@ void editorconfig_handle_get_version(const editorconfig_handle h, int* major,
  */
 EDITORCONFIG_EXPORT
 void editorconfig_handle_set_version(const editorconfig_handle h, int major,
-        int minor, int patch);
+                                     int minor, int patch);
 /*!
  * @brief Set the conf_file_name field of an editorconfig_handle object.
  *
@@ -140,7 +140,7 @@ void editorconfig_handle_set_version(const editorconfig_handle h, int major,
  */
 EDITORCONFIG_EXPORT
 void editorconfig_handle_set_conf_file_name(editorconfig_handle h,
-        const char* conf_file_name);
+                                            const char *conf_file_name);
 
 /*!
  * @brief Get the conf_file_name field of an editorconfig_handle object.
@@ -152,7 +152,7 @@ void editorconfig_handle_set_conf_file_name(editorconfig_handle h,
  * object.
  */
 EDITORCONFIG_EXPORT
-const char* editorconfig_handle_get_conf_file_name(const editorconfig_handle h);
+const char *editorconfig_handle_get_conf_file_name(const editorconfig_handle h);
 
 /*!
  * @brief Get the nth name and value fields of an editorconfig_handle object.
@@ -170,7 +170,7 @@ const char* editorconfig_handle_get_conf_file_name(const editorconfig_handle h);
  */
 EDITORCONFIG_EXPORT
 void editorconfig_handle_get_name_value(const editorconfig_handle h, int n,
-        const char** name, const char** value);
+                                        const char **name, const char **value);
 
 /*!
  * @brief Get the count of name and value fields of an editorconfig_handle
@@ -190,4 +190,3 @@ int editorconfig_handle_get_name_value_count(const editorconfig_handle h);
 #endif
 
 #endif /* !EDITORCONFIG_EDITORCONFIG_HANDLE_H__ */
-
