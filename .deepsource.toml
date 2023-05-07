@@ -5,3 +5,6 @@ name = "cxx"
 
 [[analyzers]]
 name = "test-coverage"
+
+[[transformers]]
+name = "clang-format"
