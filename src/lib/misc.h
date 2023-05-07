@@ -32,32 +32,32 @@
 #include <stddef.h>
 
 #ifndef HAVE_STRCASECMP
-# ifdef HAVE_STRICMP
-#  define strcasecmp stricmp
-# else /* HAVE_STRICMP */
+#ifdef HAVE_STRICMP
+#define strcasecmp stricmp
+#else /* HAVE_STRICMP */
 EDITORCONFIG_LOCAL
 int ec_strcasecmp(const char *s1, const char *s2);
-# define strcasecmp ec_strcasecmp
-# endif /* HAVE_STRICMP */
+#define strcasecmp ec_strcasecmp
+#endif /* HAVE_STRICMP */
 #endif /* !HAVE_STRCASECMP */
 #ifndef HAVE_STRDUP
 EDITORCONFIG_LOCAL
-char* ec_strdup(const char *str);
-# define strdup ec_strdup
+char *ec_strdup(const char *str);
+#define strdup ec_strdup
 #endif
 #ifndef HAVE_STRNDUP
 EDITORCONFIG_LOCAL
-char* ec_strndup(const char* str, size_t n);
-# define strndup ec_strndup
+char *ec_strndup(const char *str, size_t n);
+#define strndup ec_strndup
 #endif
 EDITORCONFIG_LOCAL
-char* str_replace(char* str, char oldc, char newc);
+char *str_replace(char *str, char oldc, char newc);
 #ifndef HAVE_STRLWR
 EDITORCONFIG_LOCAL
-char* ec_strlwr(char* str);
-# define strlwr ec_strlwr
+char *ec_strlwr(char *str);
+#define strlwr ec_strlwr
 #endif
 EDITORCONFIG_LOCAL
-_Bool is_file_path_absolute(const char* path);
+_Bool is_file_path_absolute(const char *path);
 
 #endif /* !MISC_H__ */

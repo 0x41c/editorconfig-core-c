@@ -99,9 +99,9 @@
  * by Python ConfigParser Library, but [ and ] are allowed in the section names.
  * The section names are filepath globs, similar to the format accepted by
  * gitignore. Forward slashes (/) are used as path separators and semicolons (;)
- * or octothorpes (#) are used for comments. Comments should go individual lines.
- * EditorConfig files should be UTF-8 encoded, with either CRLF or LF line
- * separators.
+ * or octothorpes (#) are used for comments. Comments should go individual
+ * lines. EditorConfig files should be UTF-8 encoded, with either CRLF or LF
+ * line separators.
  *
  * Filename globs containing path separators (/) match filepaths in the same
  * way as the filename globs used by .gitignore files.  Backslashes (\\) are
@@ -135,13 +135,18 @@
  *
  * @htmlonly
  * <table>
- *   <tr><td><code>*</code></td><td>Matches any string of characters, except path separators (<code>/</code>)</td></tr>
+ *   <tr><td><code>*</code></td><td>Matches any string of characters, except
+ * path separators (<code>/</code>)</td></tr>
  *   <tr><td><code>**</code></td><td>Matches any string of characters</td></tr>
  *   <tr><td><code>?</code></td><td>Matches any single character</td></tr>
- *   <tr><td><code>[seq]</code></td><td>Matches any single character in <i>seq</i></td></tr>
- *   <tr><td><code>[!seq]</code></td><td>Matches any single character not in <i>seq</i></td></tr>
- *   <tr><td><code>{s1,s2,s3}</code></td><td>Matches any of the strings given (separated by commas, can be nested)</td></tr>
- *   <tr><td><code>{num1..num2}</code></td><td>Matches any integer numbers between num1 and num2, where num1 and num2 can be either positive or negative</td></tr>
+ *   <tr><td><code>[seq]</code></td><td>Matches any single character in
+ * <i>seq</i></td></tr> <tr><td><code>[!seq]</code></td><td>Matches any single
+ * character not in <i>seq</i></td></tr>
+ *   <tr><td><code>{s1,s2,s3}</code></td><td>Matches any of the strings given
+ * (separated by commas, can be nested)</td></tr>
+ *   <tr><td><code>{num1..num2}</code></td><td>Matches any integer numbers
+ * between num1 and num2, where num1 and num2 can be either positive or
+ * negative</td></tr>
  * </table>
  * @endhtmlonly
  * @manonly
@@ -155,9 +160,11 @@
  *
  * [!seq]       Matches any single character not in seq
  *
- * {s1,s2,s3}   Matches any of the strings given (separated by commas, can be nested)
+ * {s1,s2,s3}   Matches any of the strings given (separated by commas, can be
+ * nested)
  *
- * {num1..num2} Matches any integer numbers between num1 and num2, where num1 and num2 can be either positive or negative
+ * {num1..num2} Matches any integer numbers between num1 and num2, where num1
+ * and num2 can be either positive or negative
  *
  * @endmanonly
  *
@@ -173,17 +180,34 @@
  * separated by an equal sign (=). EditorConfig plugins will ignore unrecognized
  * property names and properties with invalid values.
  *
- * Here is the list of all property names understood by EditorConfig and all valid values for these properties:
+ * Here is the list of all property names understood by EditorConfig and all
+ * valid values for these properties:
  *
  * <ul>
- * <li><strong>indent_style</strong>: set to "tab" or "space" to use hard tabs or soft tabs respectively. The values are case insensitive.</li>
- * <li><strong>indent_size</strong>: a whole number defining the number of columns used for each indentation level and the width of soft tabs (when supported). If this equals to "tab", the <strong>indent_size</strong> will be set to the tab size, which should be tab_width if <strong>tab_width</strong> is specified, or the tab size set by editor if <strong>tab_width</strong> is not specified. The values are case insensitive.</li>
- * <li><strong>tab_width</strong>: a whole number defining the number of columns used to represent a tab character. This defaults to the value of <strong>indent_size</strong> and should not usually need to be specified.</li>
- * <li><strong>end_of_line</strong>: set to "lf", "cr", or "crlf" to control how line breaks are represented. The values are case insensitive.</li>
- * <li><strong>charset</strong>: set to "latin1", "utf-8", "utf-8-bom", "utf-16be" or "utf-16le" to control the character set. Use of "utf-8-bom" is discouraged.</li>
- * <li><strong>trim_trailing_whitespace</strong>:  set to "true" to remove any whitespace characters preceding newline characters and "false" to ensure it doesn't.</li>
- * <li><strong>insert_final_newline</strong>: set to "true" ensure file ends with a newline when saving and "false" to ensure it doesn't.</li>
- * <li><strong>root</strong>: special property that should be specified at the top of the file outside of any sections. Set to "true" to stop <code>.editorconfig</code> files search on current file. The value is case insensitive.</li>
+ * <li><strong>indent_style</strong>: set to "tab" or "space" to use hard tabs
+ * or soft tabs respectively. The values are case insensitive.</li>
+ * <li><strong>indent_size</strong>: a whole number defining the number of
+ * columns used for each indentation level and the width of soft tabs (when
+ * supported). If this equals to "tab", the <strong>indent_size</strong> will be
+ * set to the tab size, which should be tab_width if <strong>tab_width</strong>
+ * is specified, or the tab size set by editor if <strong>tab_width</strong> is
+ * not specified. The values are case insensitive.</li>
+ * <li><strong>tab_width</strong>: a whole number defining the number of columns
+ * used to represent a tab character. This defaults to the value of
+ * <strong>indent_size</strong> and should not usually need to be
+ * specified.</li> <li><strong>end_of_line</strong>: set to "lf", "cr", or
+ * "crlf" to control how line breaks are represented. The values are case
+ * insensitive.</li> <li><strong>charset</strong>: set to "latin1", "utf-8",
+ * "utf-8-bom", "utf-16be" or "utf-16le" to control the character set. Use of
+ * "utf-8-bom" is discouraged.</li>
+ * <li><strong>trim_trailing_whitespace</strong>:  set to "true" to remove any
+ * whitespace characters preceding newline characters and "false" to ensure it
+ * doesn't.</li> <li><strong>insert_final_newline</strong>: set to "true" ensure
+ * file ends with a newline when saving and "false" to ensure it doesn't.</li>
+ * <li><strong>root</strong>: special property that should be specified at the
+ * top of the file outside of any sections. Set to "true" to stop
+ * <code>.editorconfig</code> files search on current file. The value is case
+ * insensitive.</li>
  * </ul>
  *
  * For any property, a value of "unset" is to remove the effect of that
@@ -214,7 +238,7 @@
 /* When included from a user program, EDITORCONFIG_EXPORT may not be defined,
  * and we define it here*/
 #ifndef EDITORCONFIG_EXPORT
-# define EDITORCONFIG_EXPORT
+#define EDITORCONFIG_EXPORT
 #endif
 
 #include <editorconfig/editorconfig_handle.h>
@@ -227,8 +251,9 @@ extern "C" {
  * @brief Parse editorconfig files corresponding to the file path given by
  * full_filename, and related information is input and output in h.
  *
- * An example is available at 
- * <a href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
+ * An example is available at
+ * <a
+ * href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
  * in EditorConfig C Core source code.
  *
  * @param full_filename The full path of a file that is edited by the editor
@@ -258,14 +283,15 @@ extern "C" {
  *
  */
 EDITORCONFIG_EXPORT
-int editorconfig_parse(const char* full_filename, editorconfig_handle h);
+int editorconfig_parse(const char *full_filename, editorconfig_handle h);
 
 /*!
  * @brief Get the error message from the error number returned by
  * editorconfig_parse().
  *
  * An example is available at
- * <a href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
+ * <a
+ * href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
  * in EditorConfig C Core source code.
  *
  * @param err_num The error number that is used to obtain the error message.
@@ -273,28 +299,29 @@ int editorconfig_parse(const char* full_filename, editorconfig_handle h);
  * @return The error message corresponding to err_num.
  */
 EDITORCONFIG_EXPORT
-const char* editorconfig_get_error_msg(int err_num);
+const char *editorconfig_get_error_msg(int err_num);
 
 /*!
  * editorconfig_parse() return value: the full_filename parameter of
  * editorconfig_parse() is not a full path name
  */
-#define EDITORCONFIG_PARSE_NOT_FULL_PATH                (-2)
+#define EDITORCONFIG_PARSE_NOT_FULL_PATH (-2)
 /*!
  * editorconfig_parse() return value: a memory error occurs.
  */
-#define EDITORCONFIG_PARSE_MEMORY_ERROR                 (-3)
+#define EDITORCONFIG_PARSE_MEMORY_ERROR (-3)
 /*!
  * editorconfig_parse() return value: the required version specified in @ref
  * editorconfig_handle is greater than the current version.
  */
-#define EDITORCONFIG_PARSE_VERSION_TOO_NEW              (-4)
+#define EDITORCONFIG_PARSE_VERSION_TOO_NEW (-4)
 
 /*!
  * @brief Get the version number of EditorConfig.
  *
  * An example is available at
- * <a href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
+ * <a
+ * href=https://github.com/editorconfig/editorconfig-core/blob/master/src/bin/main.c>src/bin/main.c</a>
  * in EditorConfig C Core source code.
  *
  * @param major If not null, the integer pointed by major will be filled with
@@ -309,7 +336,7 @@ const char* editorconfig_get_error_msg(int err_num);
  * @return None.
  */
 EDITORCONFIG_EXPORT
-void editorconfig_get_version(int* major, int* minor, int* patch);
+void editorconfig_get_version(int *major, int *minor, int *patch);
 
 /*!
  * @brief Get the version suffix.
@@ -318,11 +345,10 @@ void editorconfig_get_version(int* major, int* minor, int* patch);
  * version, empty string for a stable version.
  */
 EDITORCONFIG_EXPORT
-const char* editorconfig_get_version_suffix(void);
+const char *editorconfig_get_version_suffix(void);
 
 #ifdef __cplusplus
 }
 #endif
 
 #endif /* !EDITORCONFIG_EDITORCONFIG_H__ */
-

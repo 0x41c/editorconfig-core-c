@@ -41,18 +41,18 @@
  * exported.
  */
 #ifdef editorconfig_shared_EXPORTS /* We are building shared lib if defined */
-# ifdef WIN32
-#  ifdef __GNUC__
-#   define EDITORCONFIG_EXPORT  __attribute__ ((dllexport))
-#  else /* __GNUC__ */
-#   define EDITORCONFIG_EXPORT __declspec(dllexport)
-#  endif /* __GNUC__ */
-# else /* WIN32 */
-#  if defined(__GNUC__) && __GNUC__ >= 4
-#   define EDITORCONFIG_EXPORT __attribute__ ((visibility ("default")))
-#   define EDITORCONFIG_LOCAL __attribute__ ((visibility ("hidden")))
-#  endif /* __GNUC__ && __GNUC >= 4 */
-# endif /* WIN32 */
+#ifdef WIN32
+#ifdef __GNUC__
+#define EDITORCONFIG_EXPORT __attribute__((dllexport))
+#else /* __GNUC__ */
+#define EDITORCONFIG_EXPORT __declspec(dllexport)
+#endif /* __GNUC__ */
+#else  /* WIN32 */
+#if defined(__GNUC__) && __GNUC__ >= 4
+#define EDITORCONFIG_EXPORT __attribute__((visibility("default")))
+#define EDITORCONFIG_LOCAL __attribute__((visibility("hidden")))
+#endif /* __GNUC__ && __GNUC >= 4 */
+#endif /* WIN32 */
 #endif /* editorconfig_shared_EXPORTS */
 
 /*
@@ -60,19 +60,18 @@
  * make compilation successful
  */
 #ifndef EDITORCONFIG_EXPORT
-# define EDITORCONFIG_EXPORT
+#define EDITORCONFIG_EXPORT
 #endif
 #ifndef EDITORCONFIG_LOCAL
-# define EDITORCONFIG_LOCAL
+#define EDITORCONFIG_LOCAL
 #endif
 
 /* a macro to set editorconfig_version struct */
-#define SET_EDITORCONFIG_VERSION(editorconfig_ver, maj, min, submin) \
-    do { \
-        (editorconfig_ver)->major = (maj); \
-        (editorconfig_ver)->minor = (min); \
-        (editorconfig_ver)->patch = (submin); \
-    } while(0)
+#define SET_EDITORCONFIG_VERSION(editorconfig_ver, maj, min, submin)           \
+  do {                                                                         \
+    (editorconfig_ver)->major = (maj);                                         \
+    (editorconfig_ver)->minor = (min);                                         \
+    (editorconfig_ver)->patch = (submin);                                      \
+  } while (0)
 
 #endif /* !GLOBAL_H__ */
-

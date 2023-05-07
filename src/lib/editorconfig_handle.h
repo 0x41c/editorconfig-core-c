@@ -34,56 +34,52 @@
  * @brief A structure containing a name and its corresponding value.
  * @author EditorConfig Team
  */
-struct editorconfig_name_value
-{
-    /*! EditorConfig config item's name. */ 
-    char*       name;
-    /*! EditorConfig config item's value. */ 
-    char*       value;
+struct editorconfig_name_value {
+  /*! EditorConfig config item's name. */
+  char *name;
+  /*! EditorConfig config item's value. */
+  char *value;
 };
 
 /*!
  * @brief A structure that descripts version number.
  * @author EditorConfig Team
  */
-struct editorconfig_version
-{
-    /*! major version */
-    int                     major;
-    /*! minor version */
-    int                     minor;
-    /*! patch version */
-    int                     patch;
+struct editorconfig_version {
+  /*! major version */
+  int major;
+  /*! minor version */
+  int minor;
+  /*! patch version */
+  int patch;
 };
 
-struct editorconfig_handle
-{
-    /*!
-     * The file name of EditorConfig conf file. If this pointer is set to NULL,
-     * the file name is set to ".editorconfig" by default.
-     */
-    const char*                         conf_file_name;
+struct editorconfig_handle {
+  /*!
+   * The file name of EditorConfig conf file. If this pointer is set to NULL,
+   * the file name is set to ".editorconfig" by default.
+   */
+  const char *conf_file_name;
 
-    /*!
-     * When a parsing error occured, this will point to a file that caused the
-     * parsing error.
-     */
-    char*                               err_file;
+  /*!
+   * When a parsing error occured, this will point to a file that caused the
+   * parsing error.
+   */
+  char *err_file;
 
-    /*!
-     * version number it should act as. Set this to 0.0.0 to act like the
-     * current version.
-     */
-    struct editorconfig_version         ver;
+  /*!
+   * version number it should act as. Set this to 0.0.0 to act like the
+   * current version.
+   */
+  struct editorconfig_version ver;
 
-    /*! Pointer to a list of editorconfig_name_value structures containing
-     * names and values of the parsed result */
-    struct editorconfig_name_value*     name_values;
+  /*! Pointer to a list of editorconfig_name_value structures containing
+   * names and values of the parsed result */
+  struct editorconfig_name_value *name_values;
 
-    /*! The total count of name_values structures pointed by name_values
-     * pointer */
-    int                                 name_value_count;
+  /*! The total count of name_values structures pointed by name_values
+   * pointer */
+  int name_value_count;
 };
 
 #endif /* !EDITORCONFIG_HANDLE_H__ */
-

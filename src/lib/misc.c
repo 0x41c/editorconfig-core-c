@@ -1,16 +1,16 @@
 /*
  * Copyright (c) 2011-2012 EditorConfig Team
  * All rights reserved.
- * 
+ *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are met:
- * 
+ *
  * 1. Redistributions of source code must retain the above copyright notice,
  *    this list of conditions and the following disclaimer.
  * 2. Redistributions in binary form must reproduce the above copyright notice,
  *    this list of conditions and the following disclaimer in the documentation
  *    and/or other materials provided with the distribution.
- * 
+ *
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS"
  * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
  * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
@@ -24,11 +24,10 @@
  * POSSIBILITY OF SUCH DAMAGE.
  */
 
-
 #include "misc.h"
 
 #ifdef WIN32
-# include <shlwapi.h>
+#include <shlwapi.h>
 #endif
 
 #if !defined(HAVE_STRCASECMP) && !defined(HAVE_STRICMP)
@@ -63,22 +62,20 @@
  * SUCH DAMAGE.
  */
 
-#include <string.h>
 #include <ctype.h>
+#include <string.h>
 
 typedef unsigned char u_char;
 
 EDITORCONFIG_LOCAL
-int ec_strcasecmp(const char *s1, const char *s2)
-{
-    const unsigned char
-        *us1 = (const unsigned char*)s1,
-        *us2 = (const unsigned char*)s2;
+int ec_strcasecmp(const char *s1, const char *s2) {
+  const unsigned char *us1 = (const unsigned char *)s1,
+                      *us2 = (const unsigned char *)s2;
 
-    while (tolower(*us1) == tolower(*us2++))
-        if (*us1++ == '\0')
-            return (0);
-    return (tolower(*us1) - tolower(*--us2));
+  while (tolower(*us1) == tolower(*us2++))
+    if (*us1++ == '\0')
+      return (0);
+  return (tolower(*us1) - tolower(*--us2));
 }
 #endif /* !HAVE_STRCASECMP && !HAVE_STRICMP */
 
@@ -119,26 +116,24 @@ int ec_strcasecmp(const char *s1, const char *s2)
 #include <string.h>
 
 EDITORCONFIG_LOCAL
-char* ec_strdup(const char *str)
-{
-    size_t      len;
-    char*       copy;
+char *ec_strdup(const char *str) {
+  size_t len;
+  char *copy;
 
-    len = strlen(str) + 1;
-    if ((copy = malloc(len)) == NULL)
-        return (NULL);
-    memcpy(copy, str, len);
-    return (copy);
+  len = strlen(str) + 1;
+  if ((copy = malloc(len)) == NULL)
+    return (NULL);
+  memcpy(copy, str, len);
+  return (copy);
 }
 
 #endif /* !HAVE_STRDUP */
-
 
 #ifndef HAVE_STRNDUP
 /*
  * strndup function from NetBSD
  *
- * $NetBSD: strndup.c,v 1.3 2007/01/14 23:41:24 cbiere Exp $ 
+ * $NetBSD: strndup.c,v 1.3 2007/01/14 23:41:24 cbiere Exp $
  *
  * Copyright (c) 1988, 1993
  *  The Regents of the University of California.  All rights reserved.
@@ -175,19 +170,18 @@ char* ec_strdup(const char *str)
 #include <string.h>
 
 EDITORCONFIG_LOCAL
-char* ec_strndup(const char* str, size_t n)
-{
-    size_t      len;
-    char*       copy;
+char *ec_strndup(const char *str, size_t n) {
+  size_t len;
+  char *copy;
 
-    for (len = 0; len < n && str[len]; len++)
-        continue;
+  for (len = 0; len < n && str[len]; len++)
+    continue;
 
-    if ((copy = malloc(len + 1)) == NULL)
-        return (NULL);
-    memcpy(copy, str, len);
-    copy[len] = '\0';
-    return (copy);
+  if ((copy = malloc(len + 1)) == NULL)
+    return (NULL);
+  memcpy(copy, str, len);
+  copy[len] = '\0';
+  return (copy);
 }
 
 #endif /* HAVE_STRNDUP */
@@ -196,18 +190,17 @@ char* ec_strndup(const char* str, size_t n)
  * replace oldc with newc in the string str
  */
 EDITORCONFIG_LOCAL
-char* str_replace(char* str, char oldc, char newc)
-{
-    char*   p;
+char *str_replace(char *str, char oldc, char newc) {
+  char *p;
 
-    if (str == NULL)
-        return NULL;
+  if (str == NULL)
+    return NULL;
 
-    for (p = str; *p != '\0'; p++)
-        if (*p == oldc)
-            *p = newc;
+  for (p = str; *p != '\0'; p++)
+    if (*p == oldc)
+      *p = newc;
 
-    return str;
+  return str;
 }
 
 #ifndef HAVE_STRLWR
@@ -217,14 +210,13 @@ char* str_replace(char* str, char oldc, char newc)
  * convert the string to lowercase
  */
 EDITORCONFIG_LOCAL
-char* ec_strlwr(char* str)
-{
-    char*       p;
+char *ec_strlwr(char *str) {
+  char *p;
 
-    for (p = str; *p; ++p)
-        *p = (char)tolower((unsigned char)*p);
+  for (p = str; *p; ++p)
+    *p = (char)tolower((unsigned char)*p);
 
-    return str;
+  return str;
 }
 
 #endif /* !HAVE_STRLWR */
@@ -233,18 +225,17 @@ char* ec_strlwr(char* str)
  * is path an abosolute file path
  */
 EDITORCONFIG_LOCAL
-_Bool is_file_path_absolute(const char* path)
-{
-    if (!path)
-        return 0;
+_Bool is_file_path_absolute(const char *path) {
+  if (!path)
+    return 0;
 
 #if defined(UNIX)
-    if (*path == '/')
-        return 1;
-    return 0;
+  if (*path == '/')
+    return 1;
+  return 0;
 #elif defined(WIN32)
-    return !PathIsRelative(path);
+  return !PathIsRelative(path);
 #else
-# error "Either UNIX or WIN32 must be defined."
+#error "Either UNIX or WIN32 must be defined."
 #endif
 }
